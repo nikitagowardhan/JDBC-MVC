@@ -1,15 +1,15 @@
 package view;
 
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;    
-public class MenuView {  
+public class MenuView implements ActionListener {  
 
-	
-	
-	public MenuView() { 
+public MenuView()   { 
 	//Creating Frame
     JFrame f=new JFrame("Asterisc");  
     //Creating Lable
@@ -17,6 +17,12 @@ public class MenuView {
     l1.setBounds(50,50, 100,30);
     JLabel l2 = new JLabel("City : ");
     l2.setBounds(50,100, 100,30);
+    
+        //Creating icon
+        Image icon = Toolkit.getDefaultToolkit().getImage("icon/image.png");    
+  		f.setIconImage(icon); 
+    
+    
     
     //Creating TextField
     JTextField tx1 = new  JTextField();
@@ -29,14 +35,8 @@ public class MenuView {
     b.setBounds(100,190,100,50);
     
     //Creating ActionListener
-    b.addActionListener(new ActionListener(){  
-    	public void actionPerformed(ActionEvent e){
-    		JTextArea area=new JTextArea("Welcome to Asterisc.");  
-            area.setBounds(10,30, 200,200);
-            f.add(area);  
-            f.add(b);
-    	           }
-    	});  
+   b.addActionListener(this);
+    	
     
     
     
@@ -49,4 +49,11 @@ public class MenuView {
     f.setLayout(null);  
     f.setVisible(true); 
 	}
-}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		JTextArea area=new JTextArea("Welcome to Asterisc.");  
+        area.setBounds(160,200, 200,200);
+        
+	           }
+	  }
