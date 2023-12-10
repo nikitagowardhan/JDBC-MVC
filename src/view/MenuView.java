@@ -6,10 +6,14 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;    
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;    
 public class MenuView implements ActionListener {  
 
-public MenuView()   { 
+public MenuView()   
+{ 
 	//Creating Frame
     JFrame f=new JFrame("Asterisc");  
     //Creating Lable
@@ -34,26 +38,25 @@ public MenuView()   {
     JButton b=new JButton("Click Here");  
     b.setBounds(100,190,100,50);
     
-    //Creating ActionListener
-   b.addActionListener(this);
-    	
-    
-    
-    
-    f.add(b);  
-    f.add(l1);
-    f.add(l2);
-    f.add(tx1);
-    f.add(tx2);
-    f.setSize(400,400);
-    f.setLayout(null);  
-    f.setVisible(true); 
-	}
+    JButton b1=new JButton("Click Here");  
+    b1.setBounds(100,190,100,50);
+  //Creating ActionListener
+   
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		JTextArea area=new JTextArea("Welcome to Asterisc.");  
-        area.setBounds(160,200, 200,200);
-        
-	           }
-	  }
+f.add(b);  
+f.add(l1);
+f.add(l2);
+f.add(tx1);
+f.add(tx2);
+f.setSize(400,400);
+f.setLayout(null);  
+f.setVisible(true); 
+}
+
+@Override
+public void actionPerformed(ActionEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+}
+   
